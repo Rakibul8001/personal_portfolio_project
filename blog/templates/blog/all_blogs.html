@@ -1,1 +1,15 @@
-hello blog
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Blog Page</title>
+	</head>
+	<body>
+		<h1>Most recent Blogs</h1>
+		{% for blog in blogs %}
+		<a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+		<h3>{{ blog.date }}</h3>
+		{% endfor %}
+	</body>
+</html>
